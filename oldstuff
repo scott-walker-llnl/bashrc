@@ -1,0 +1,24 @@
+# outdated
+#LD_LIBRARY_PATH=/g/g19/walker91/Projects/libtracer/lib:/usr/local/tools/mvapich2-intel-debug-2.1/lib:/usr/local/lib/:/usr/lib/:/g/g19/walker91/Projects/libmsr-walker/lib:/lib:/lib64:/usr/lib:/usr/lib64:/usr/local/lib:/usr/local/lib64:/opt/intel-14.0/compiler/lib/intel64:/g/g19/walker91/Projects/libmsr-walker/install/lib:/g/g19/walker91/lib/libmsr/lib
+#export PATH='/usr/local/tools/mvapich2-intel-debug-2.1/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/global/tools/totalview/m/catalyst/default/bin:/collab/usr/global/tools/git/chaos_5_x86_64_ib/git-2.0.0/bin:.:~/bin/bin:/g/g19/walker91/Projects/uefi/edk2/BaseTools/BinWrappers/PosixLike/:/g/g19/walker91/bin'
+#. /usr/local/tools/dotkit/init.sh
+#use mvapich2-intel-debug-2.1
+#use libunwind
+#use gcc-4.6.1
+#module load mvapich2/2.3
+#module load intel/18.0.2
+#export LMSRPUB=/g/g19/walker91/Public/libmsr/
+#export LMSRPR=/g/g19/walker91/Projects/libmsr-walker/
+#alias lmsrpub="cd $LMSRPUB"
+#alias lmsrpr="cd $LMSRPR"
+#export SCRATCH=/p/lscratchf/walker91/
+#export PS1='$(hostname):$(pwd): '
+#set PS1='$(hostname):$(pwd): '
+#alias catfix="cat ~/Projects/msr-safe/whitelists/wl_063E > /dev/cpu/msr_whitelist"
+
+# uefi
+#export EDK_TOOLS_PATH=/g/g19/walker91/Projects/uefi/edk2/BaseTools
+#export PACKAGES_PATH=/g/g19/walker91/Projects/uefi/edk2
+#export BOOKMARK=/g/g19/walker91/Projects/uefi/edk2/IntelFrameworkModulePkg/Csm/BiosThunk/Snp16Dxe
+#export IFBDXE=/g/g19/walker91/Projects/uefi/edk2/Build/IfbDriverPkg/DEBUG_GCC46/X64/IfbDriverPkg/IfbDxe/IfbDxe/DEBUG/
+#export DXEDEV=/g/g19/walker91/Projects/uefi/edk2/IfbDriverPkg/IfbCx3Dxe/
