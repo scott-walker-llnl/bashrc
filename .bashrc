@@ -3,6 +3,11 @@ alias l="ls -la --color"
 alias ..="cd .."
 source .shortcuts.sh
 
+# settings
+stty erase ^?
+set +o nounset
+set -o vi
+
 # exports
 LOCAL=$HOME/local
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LOCAL/lib
@@ -15,8 +20,3 @@ export WORKSPACE=$HOME/Projects
 
 # prompt
 export PS1='\[\e[0;33m\][\[\e[m\e[1;31m\]{\h} \[\e[m\e[1;36m\]$(pwd)\[\e[m\e[0;33m\]]\$ \[\e[m\]'
-
-# settings
-stty erase ^?
-set +o nounset
-set -o vi
