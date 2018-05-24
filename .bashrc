@@ -11,7 +11,7 @@ export C_INCLUDE_PATH=$LOCAL/include
 export PATH=$PATH:$LOCAL/bin
 SSH_ASKPASS=""
 export SSH_ASKPASS
-export WORKSPACE=/g/g19/walker91/Projects/legion/examples/mpi_interop
+export WORKSPACE=$HOME/Projects
 
 # prompt
 export PS1='\[\e[0;33m\][\[\e[m\e[1;31m\]{\h} \[\e[m\e[1;36m\]$(pwd)\[\e[m\e[0;33m\]]\$ \[\e[m\]'
