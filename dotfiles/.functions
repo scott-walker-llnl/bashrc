@@ -6,6 +6,7 @@ bm ()
 		if [ "$2" == "" ]
 		then
 			echo nothing to do...
+			return 0
 		fi
 		echo bookmark \'$2\' created as $(pwd)
 		echo ${2}=$(pwd) >> $HOME/.bookmarks
@@ -18,6 +19,7 @@ bm ()
 		if [ "$2" == "" ]
 		then
 			echo nothing to do...
+			return 0
 		fi
 		echo bookmarks matching \'$2\' deleted
 		sed -i /$2=/d $HOME/.bookmarks
