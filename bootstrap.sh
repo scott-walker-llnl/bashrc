@@ -24,6 +24,7 @@ then
 		./configure --disable-gui --prefix=$HOME/local/ --with-features=huge --enable-multibyte --enable-pythoninterp=yes --enable-python3interp=yes --enable-perlinterp=yes --enable-luainterp=yes --enable-cscope --with-python3-config-dir=$2
 		make -j 4 && make install
 	fi
+	cd $_DIR_
 
 	if [ ! -d $HOME/.vim/bundle/Vundle.vim ]
 	then
