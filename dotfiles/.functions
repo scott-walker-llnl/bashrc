@@ -61,6 +61,7 @@ envupdate ()
 	git pull origin master
 	cp dotfiles/.bashrc $HOME/
 	cp dotfiles/.functions $HOME/
+	cp dotfiles/.shortcuts $HOME/
 	cp dotfiles/.vimrc $HOME/
 	source $HOME/.bashrc
 	cp utility/rm.sh $HOME/local/bin
