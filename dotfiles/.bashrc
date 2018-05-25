@@ -16,7 +16,7 @@ set -o vi
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LOCAL/lib
 export CPLUS_INCLUDE_PATH=$LOCAL/include
 export C_INCLUDE_PATH=$LOCAL/include
-export PATH=$PATH:$LOCAL/bin
+export PATH=$LOCAL/bin:$PATH
 SSH_ASKPASS=""
 export SSH_ASKPASS
 export WORKSPACE=$HOME/Projects

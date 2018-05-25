@@ -1,6 +1,12 @@
 set nocompatible
 filetype off
 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+set encoding=utf-8
 set t_Co=256
 syntax on
 set background=dark
@@ -41,29 +47,39 @@ noremap <C-B> <NOP>
 
 nnoremap gb <C-o>
 
-"set rtp+=~/.vim/bundle/vundle/
-"call vundle#rc()
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'nathanaelkane/vim-indent-guides'
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd guibg=red ctermbg=3
+hi IndentGuidesEven guibg=green ctermbg=4
+let g:indent_guides_guide_size = 1
+let g:indent_guides_color_change_percent = 3
+let g:indent_guides_enable_on_vim_startup = 1
+"let g:ycm_server_keep_logfiles = 1
+"let g:ycm_server_log_level = 'debug'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'bling/vim-airline'
+"Plugin 'sjl/badwolf'
 
-" let Vundle manage Vundle
-" required! 
-"Bundle 'gmarik/vundle'
-"filetype plugin indent on     " required!
+" Syntax checking hacks for vim
+Plugin 'scrooloose/syntastic'
+"let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_c_checkers = ['gcc']
+let g:syntastic_cpp_checkers = ['g++']
+let g:syntastic_python_checkers = ['python']
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_auto_jump=1
+" nnoremap <leader>js :w<CR>:make<CR>:cw<CR>
+" This does what it says on the tin. It will check your file on open too, not
+" just on save.
+" " You might not want this, so just leave it out if you don't.
+"let g:syntastic_check_on_open=1
+" http://oli.me.uk/2013/06/29/equipping-vim-for-javascript/
+"
 
-" javascript syntax
-"Bundle 'jelera/vim-javascript-syntax'
-
-" filetype detection and syntax highlightnig for JSON in Vim
-"Bundle 'helino/vim-json'
-
-" Vastly improved Javascript indentation and syntax support in Vim.
-"Bundle 'pangloss/vim-javascript'
-
-" A Vim plugin for visually displaying indent levels in code
-"Bundle 'nathanaelkane/vim-indent-guides'
-"hi IndentGuidesOdd  ctermbg=black
-"hi IndentGuidesEven ctermbg=darkgrey
-"let g:indent_guides_start_level = 2
-"let g:indent_guides_guide_size = 1
+call vundle#end()
+filetype plugin indent on
 
 " Vim plugin, provides insert mode auto-completion for quotes, parens,
 "brackets, etc.
@@ -76,29 +92,14 @@ nnoremap gb <C-o>
 " git diff marks in gutter
 "Bundle 'airblade/vim-gitgutter'
 
-" syntax highlighting"
-"Bundle 'othree/javascript-libraries-syntax.vim'
-
 " Vim Markdown runtime files
 "Bundle 'tpope/vim-markdown'
-
-" surround.vim: quoting/parenthesizing made simple
-"Bundle 'tpope/vim-surround'
-
-" commentary.vim: comment stuff out
-"Bundle 'tpope/vim-commentary'
-
-" capslock.vim: Software caps lock
-"Bundle 'tpope/vim-capslock'
 
 " repeat.vim: enable repeating supported plugin maps with .
 "Bundle 'tpope/vim-repeat'
 
 " fugitive.vim: a Git wrapper so awesome, it should be illegal
 "Bundle 'tpope/vim-fugitive'
-
-"lean & mean status/tabline for vim that's light as air"
-"Bundle 'bling/vim-airline'
 
 " https://github.com/Lokaltog/powerline-fonts
 " Install these modified fonts before switching this to 1
@@ -116,7 +117,6 @@ nnoremap gb <C-o>
 "set noshowmode
 "set ttimeoutlen=25
 "let g:airline#extensions#tabline#enabled = 1
-
 
 " Simple tmux statusline generator with support for powerline symbols and
 " airline integration"
