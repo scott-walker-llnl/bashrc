@@ -3,6 +3,10 @@ bm ()
 	if [ "$1" == "-n" ]
 	then
 		# create new bookmark
+		if [ "$2" == "" ]
+		then
+			echo nothing to do...
+		fi
 		echo bookmark \'$2\' created as $(pwd)
 		echo ${2}=$(pwd) >> $HOME/.bookmarks
 		return 0
@@ -11,6 +15,10 @@ bm ()
 	if [ "$1" == "-d" ]
 	then
 		# remove bookmark
+		if [ "$2" == "" ]
+		then
+			echo nothing to do...
+		fi
 		echo bookmarks matching \'$2\' deleted
 		sed -i /$2=/d $HOME/.bookmarks
 		return 0
