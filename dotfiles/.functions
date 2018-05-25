@@ -8,8 +8,14 @@ bm ()
 			echo nothing to do...
 			return 0
 		fi
-		echo bookmark \'$2\' created as $(pwd)
-		echo ${2}=$(pwd) >> $HOME/.bookmarks
+		_BM_=$(/bin/grep "$2=" $HOME/.bookmarks)
+		if [ "$_BM_" == "" ]
+		then
+			echo bookmark \'$2\' created as $(pwd)
+			echo ${2}=$(pwd) >> $HOME/.bookmarks
+		else
+			echo bookmark \'$2\' already exists
+		fi
 		return 0
 	fi
 
