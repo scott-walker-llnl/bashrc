@@ -4,7 +4,8 @@ LOCAL=$HOME/local
 alias l="ls -la --color"
 alias ..="cd .."
 alias rm="$LOCAL/bin/rm.sh"
-source .shortcuts.sh
+source $HOME/.shortcuts.sh
+source $HOME/.functions.sh
 
 # settings
 stty erase ^?
@@ -19,12 +20,13 @@ export PATH=$PATH:$LOCAL/bin
 SSH_ASKPASS=""
 export SSH_ASKPASS
 export WORKSPACE=$HOME/Projects
+export LOCAL
 
 # prompt
 export PS1='\[\e[0;33m\][\[\e[m\e[1;31m\]{\h} \[\e[m\e[1;36m\]$(pwd)\[\e[m\e[0;33m\]]\$ \[\e[m\]'
 
 # trash
-if [ ! -d "$HOME/Trash" ]
+if [ ! -d "$HOME/.Trash" ]
 then
-	mkdir $HOME/Trash
+	mkdir $HOME/.Trash
 fi
