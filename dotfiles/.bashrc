@@ -11,6 +11,7 @@ source $HOME/.functions
 stty erase ^?
 set +o nounset
 set -o vi
+bind -f $HOME/.inputrc
 
 # exports
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LOCAL/lib

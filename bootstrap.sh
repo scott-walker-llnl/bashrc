@@ -34,11 +34,13 @@ then
 		git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 	fi
 	echo "finished Vim plugins"
-	echo "don't forget to finish YouCompleteMe install by running ~/.vim/bundle/YouCompleteMe/third_party/ycmd/build.py"
+	echo "###don't forget to finish YouCompleteMe install by running ~/.vim/bundle/YouCompleteMe/third_party/ycmd/build.py###"
 fi
 
 cp dotfiles/.bashrc $HOME/
 cp dotfiles/.functions $HOME/
+cp dotfiles/.shortcuts $HOME/
+cp dotfiles/.inputrc $HOME/
 cp dotfiles/.vimrc $HOME/
 cp utility/rm.sh $HOME/local/bin
 

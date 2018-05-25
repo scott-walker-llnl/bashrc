@@ -1,0 +1,9 @@
+set editing-mode vi
+
+$if mode=vi
+	set keymap vi-command
+	"L": end-of-line
+	"H": beginning-of-line
+	set keymap vi-insert
+	"jj": vi-movement-mode
+$endif
