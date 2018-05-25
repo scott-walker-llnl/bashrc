@@ -42,12 +42,13 @@ bm ()
 envupdate ()
 {
 	cd $HOME/Projects/bashrc
-	git pull
+	git pull origin master
 	cp dotfiles/.bashrc $HOME/
 	cp dotfiles/.functions $HOME/
 	cp dotfiles/.vimrc $HOME/
 	source $HOME/.bashrc
 	cd -
+	echo environment updated
 }
 
 export bm

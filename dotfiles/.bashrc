@@ -4,8 +4,8 @@ LOCAL=$HOME/local
 alias l="ls -la --color"
 alias ..="cd .."
 alias rm="$LOCAL/bin/rm.sh"
-source $HOME/.shortcuts.sh
-source $HOME/.functions.sh
+source $HOME/.shortcuts
+source $HOME/.functions
 
 # settings
 stty erase ^?
