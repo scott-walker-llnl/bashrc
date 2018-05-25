@@ -1,4 +1,5 @@
 # make sure we are up to date
+# -v requires python<2+3>-devel package and cmake
 git pull origin master
 mkdir -p $HOME/local/bin
 mkdir -p $HOME/local/include
@@ -9,6 +10,7 @@ mkdir -p $HOME/.Trash
 if [ "$1" == "-v" ]
 then
 	echo installing Vim plugins
+	echo "REQUIRES CMAKE and PYTHON<2+3>-devel"
 	if [ "$2" == "" ]
 	then
 		echo "error: arg2 is path to python config folder (usually in /usr/lib/python<version>)"
