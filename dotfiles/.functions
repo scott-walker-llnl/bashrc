@@ -1,0 +1,54 @@
+bm ()
+{
+	if [ "$1" == "-n" ]
+	then
+		# create new bookmark
+		echo bookmark \'$2\' created as $(pwd)
+		echo ${2}=$(pwd) >> $HOME/.bookmarks
+		return 0
+	fi
+
+	if [ "$1" == "-d" ]
+	then
+		# remove bookmark
+		echo bookmarks matching \'$2\' deleted
+		sed -i /$2=/d $HOME/.bookmarks
+		return 0
+	fi
+
+	if [ "$1" == "-l" ]
+	then
+		# list
+		cat $HOME/.bookmarks
+		return 0
+	fi
+
+	echo goto bookmark \'$1\'
+	_BM_=$(/bin/grep "$1=" $HOME/.bookmarks | /bin/sed -r "s/$1=(.*)\$/\1/") 
+	if [ "$_BM_" == "" ]
+	then
+		echo bookmark broken: either bookmark does not exist or has no directory
+		return 0
+	fi
+	if [ ! -d $_BM_ ]
+	then
+		echo bookmark broken: directory does not exist
+		return 0
+	fi
+	cd $_BM_
+	return 0
+}
+
+envupdate ()
+{
+	cd $HOME/Projects/bashrc
+	git pull
+	cp dotfiles/.bashrc $HOME/
+	cp dotfiles/.functions $HOME/
+	cp dotfiles/.vimrc $HOME/
+	source $HOME/.bashrc
+	cd -
+}
+
+export bm
+export envupdate
