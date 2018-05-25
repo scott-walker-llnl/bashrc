@@ -47,6 +47,7 @@ envupdate ()
 	cp dotfiles/.functions $HOME/
 	cp dotfiles/.vimrc $HOME/
 	source $HOME/.bashrc
+	cp utility/rm.sh $HOME/local/bin
 	cd -
 	echo environment updated
 }
