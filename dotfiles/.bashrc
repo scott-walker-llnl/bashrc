@@ -1,4 +1,8 @@
 LOCAL=$HOME/local
+if [ -f $HOME/.habitat ]
+then
+	source $HOME/.habitat
+fi
 
 # alias
 alias l="ls -la --color"
@@ -20,7 +24,6 @@ export C_INCLUDE_PATH=$LOCAL/include
 export PATH=$LOCAL/bin:$PATH
 SSH_ASKPASS=""
 export SSH_ASKPASS
-export WORKSPACE=$HOME/Projects
 export LOCAL
 
 # prompt

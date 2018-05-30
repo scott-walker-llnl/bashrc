@@ -11,6 +11,7 @@ set encoding=utf-8
 set t_Co=256
 syntax on
 set background=dark
+set backspace=2
 
 set ignorecase
 syntax on
@@ -28,21 +29,18 @@ set number
 
 " FILE COMMANDS
 " go to next/prev file with Tab/Backspace
-noremap <bs> :bprev<CR>
-noremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
+nnoremap <bs> :bprev<CR>
+nnoremap <Tab> :bnext<CR>
 
 " PAGE COMMANDS
 " full page up
 noremap zh <C-b>
-noremap zh <C-b>
 " half page down
-noremap zj <C-d>
 noremap zj <C-d>
 " half page up
 noremap zk <C-u>
-noremap zk <C-u>
 " full page down
-noremap zl <C-f>
 noremap zl <C-f>
 
 " CURSOR COMMANDS
@@ -54,6 +52,8 @@ noremap zf <C-i>
 " MODE COMMANDS
 inoremap ;; <Esc>
 vnoremap ;; <Esc>
+inoremap qq <Esc>
+vnoremap qq <Esc>
 
 " SEARCH COMMANDS
 " clear search pattern
