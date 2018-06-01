@@ -70,7 +70,11 @@ envupdate ()
 	cp dotfiles/.shortcuts $HOME/
 	cp dotfiles/.inputrc $HOME/
 	cp dotfiles/.vimrc $HOME/
-	cp dotfiles/nocturn.vim $HOME/.vim/colors/
+	if [ ! -d $HOME/.vim/colors ]
+	then
+		mkdir -p $HOME/.vim/colors/
+	fi
+	cp dotfiles/nocturn.vim $HOME/.vim/colors/nocturn.vim
 	source $HOME/.bashrc
 	cp utility/rm.sh $HOME/local/bin
 	cd -
