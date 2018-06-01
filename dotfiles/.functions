@@ -3,6 +3,7 @@ bm ()
 	if [ "$1" == "" ]
 	then
 		echo nothing to do
+		return 0
 	fi
 
 	if [ "$1" == "-n" ]
@@ -69,6 +70,7 @@ envupdate ()
 	cp dotfiles/.shortcuts $HOME/
 	cp dotfiles/.inputrc $HOME/
 	cp dotfiles/.vimrc $HOME/
+	cp dotfiles/nocturn.vim $HOME/.vim/colors/
 	source $HOME/.bashrc
 	cp utility/rm.sh $HOME/local/bin
 	cd -

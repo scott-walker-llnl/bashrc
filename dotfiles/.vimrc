@@ -6,20 +6,16 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-colorscheme default
-set encoding=utf-8
 set t_Co=256
+colorscheme nocturn
+set encoding=utf-8
 syntax on
-set background=dark
-set backspace=2
 
+set backspace=2
 set ignorecase
-syntax on
-"color molokai
 set hlsearch
 
 set ts=4
-"set expandtab
 set shiftwidth=4
 set autoindent
 set number
@@ -83,8 +79,8 @@ noremap <C-B> <NOP>
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_auto_colors = 0
-hi IndentGuidesOdd guibg=red ctermbg=3
-hi IndentGuidesEven guibg=green ctermbg=4
+hi IndentGuidesEven guibg=red ctermbg=236
+hi IndentGuidesOdd guibg=green ctermbg=237
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 3
 let g:indent_guides_enable_on_vim_startup = 1

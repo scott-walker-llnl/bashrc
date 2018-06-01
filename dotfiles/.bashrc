@@ -25,6 +25,7 @@ export PATH=$LOCAL/bin:$PATH
 SSH_ASKPASS=""
 export SSH_ASKPASS
 export LOCAL
+export VIMRUNTIME=$LOCAL/share/vim/vim81
 
 # prompt
 export PS1='\[\e[0;33m\][\[\e[m\e[1;31m\]{\h} \[\e[m\e[1;36m\]$(pwd)\[\e[m\e[0;33m\]]\$ \[\e[m\]'
