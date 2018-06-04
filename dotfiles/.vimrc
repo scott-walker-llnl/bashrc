@@ -50,6 +50,8 @@ inoremap ;; <Esc>
 vnoremap ;; <Esc>
 inoremap qq <Esc>
 vnoremap qq <Esc>
+noremap q <NOP>
+noremap Q <q>
 
 " SEARCH COMMANDS
 " clear search pattern
