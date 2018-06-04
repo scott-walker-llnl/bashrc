@@ -45,6 +45,7 @@ cp dotfiles/.inputrc $HOME/
 cp dotfiles/.vimrc $HOME/
 cp dotfiles/nocturn.vim $HOME/.vim/colors/
 cp utility/rm.sh $HOME/local/bin
+cp habitat/habitat.sh $HOME/local/bin/habitat
 
 source $HOME/.bashrc
 

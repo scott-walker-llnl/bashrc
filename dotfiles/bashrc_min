@@ -19,13 +19,8 @@ set -o vi
 bind -f $HOME/.inputrc
 
 # exports
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LOCAL/lib
-export CPLUS_INCLUDE_PATH=$LOCAL/include
-export C_INCLUDE_PATH=$LOCAL/include
-export PATH=$LOCAL/bin:$PATH
 SSH_ASKPASS=""
 export SSH_ASKPASS
-export LOCAL
 export VIMRUNTIME=$LOCAL/share/vim/vim81
 export HABITAT_PATH=$HOME/Projects/bashrc
 
@@ -37,3 +32,5 @@ if [ ! -d "$HOME/.Trash" ]
 then
 	mkdir $HOME/.Trash
 fi
+
+# exports

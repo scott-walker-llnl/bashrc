@@ -70,6 +70,7 @@ envupdate ()
 	cp dotfiles/.shortcuts $HOME/
 	cp dotfiles/.inputrc $HOME/
 	cp dotfiles/.vimrc $HOME/
+	cp habitat/habitat.sh $HOME/local/bin/habitat
 	if [ ! -d $HOME/.vim/colors ]
 	then
 		mkdir -p $HOME/.vim/colors/
