@@ -1,0 +1,5 @@
+alias embarcadero="ssh walker91@192.168.1.200"
+alias ada="ssh walker91@192.168.1.220"
+alias lectura="ssh walker8@lectura.cs.arizona.edu"
+alias ifrit="ssh walker8@ifrit.cs.arizona.edu"
+alias catalyst="ssh walker91@catalyst.llnl.gov"
