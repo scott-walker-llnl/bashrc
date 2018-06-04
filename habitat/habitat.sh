@@ -91,6 +91,7 @@ load ()
 	cp .shortcuts $HOME/
 	cd $_dir_
 	echo "Habitat switched to $habname"
+	echo "Use 'envupdate' to activate changes"
 }
 
 delete ()
@@ -117,6 +118,59 @@ delete ()
 	cd $_dir_
 }
 
+update ()
+{
+	if [ $1 == "" ]
+	then
+		echo "No habitat name provided"
+		return 0
+	fi
+	_dir_=$(pwd)
+	cd $HABITAT_PATH
+	# create a new branch for this habitat with the specified name
+	git checkout $1
+	if [ $? -eq 1 ]
+	then
+		echo "ERROR: load habitat $1, does it already exist?"
+		return 1
+	fi
+	cat dotfiles/bashrc_min > .bashrc
+	if [ $? -eq 1 ]
+	then
+		echo "ERROR: unable to update habitat $1, is HABITAT_PATH correct?"
+		return 1
+	fi
+	echo "export PATH=$PATH" >> .bashrc
+	echo "export LD_LIBRARY_PATH=$LD_LIBRARY_PATH" >> .bashrc
+	echo "export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH" >> .bashrc 
+	echo "export C_INCLUDE_PATH=$C_INCLUDE_PATH" >> .bashrc
+	cp $HOME/.vimrc .
+	cp $HOME/.inputrc .
+	cp $HOME/.functions .
+	cp $HOME/.shortcuts .
+	git add .bashrc
+	if [ $? -eq 1 ]
+	then
+		echo "ERROR: unable to update habitat $1, is HABITAT_PATH correct?"
+		return 1
+	fi
+	git add .vimrc
+	git add .inputrc
+	git add .functions
+	git add .shortcuts
+	git commit -m "update for habitat $1"
+	git pull origin $1
+	if [ $? -eq 1 ]
+	then
+		echo "ERROR: unable to update habitat $1, does it exist?"
+		return 1
+	fi
+	git push origin $1
+	cp .bashrc $HOME/
+	echo "Habitat $1 updated"
+	cd $_dir_
+}
+
 if [ $HABITAT_PATH == "" ]
 then
 	echo "HABITAT_PATH is not set"
@@ -138,6 +192,12 @@ if [ $1 == "delete" ]
 then
 	# call delete function
 	delete $2
+	exit
+fi
+if [ $1 == "update" ]
+then
+	# call update function
+	update $2
 	exit
 fi
 if [ $1 == "which" ]
