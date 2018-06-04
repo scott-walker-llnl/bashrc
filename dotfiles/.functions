@@ -3,6 +3,7 @@ bm ()
 	if [ "$1" == "" ]
 	then
 		echo nothing to do
+		return 0
 	fi
 
 	if [ "$1" == "-n" ]
@@ -69,6 +70,11 @@ envupdate ()
 	cp dotfiles/.shortcuts $HOME/
 	cp dotfiles/.inputrc $HOME/
 	cp dotfiles/.vimrc $HOME/
+	if [ ! -d $HOME/.vim/colors ]
+	then
+		mkdir -p $HOME/.vim/colors/
+	fi
+	cp dotfiles/nocturn.vim $HOME/.vim/colors/nocturn.vim
 	source $HOME/.bashrc
 	cp utility/rm.sh $HOME/local/bin
 	cd -
