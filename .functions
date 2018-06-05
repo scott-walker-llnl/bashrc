@@ -14,7 +14,7 @@ bm ()
 			echo nothing to do...
 			return 0
 		fi
-		_BM_=$(/bin/grep "$2=" $HOME/.bookmarks)
+		_BM_=$(/bin/grep "^$2=" $HOME/.bookmarks)
 		if [ "$_BM_" == "" ]
 		then
 			echo bookmark \'$2\' created as $(pwd)
@@ -34,7 +34,7 @@ bm ()
 			return 0
 		fi
 		echo bookmarks matching \'$2\' deleted
-		sed -i /$2=/d $HOME/.bookmarks
+		sed -i /^$2=/d $HOME/.bookmarks
 		return 0
 	fi
 
@@ -46,7 +46,7 @@ bm ()
 	fi
 
 	echo goto bookmark \'$1\'
-	_BM_=$(/bin/grep "$1=" $HOME/.bookmarks | /bin/sed -r "s/$1=(.*)\$/\1/") 
+	_BM_=$(/bin/grep "^$1=" $HOME/.bookmarks | /bin/sed -r "s/^$1=(.*)\$/\1/") 
 	if [ "$_BM_" == "" ]
 	then
 		echo bookmark broken: either bookmark does not exist or has no directory
@@ -63,22 +63,20 @@ bm ()
 
 envupdate ()
 {
-	cd $HOME/Projects/bashrc
-	git pull origin master
-	cp dotfiles/.bashrc $HOME/
-	cp dotfiles/.functions $HOME/
-	cp dotfiles/.shortcuts $HOME/
-	cp dotfiles/.inputrc $HOME/
-	cp dotfiles/.vimrc $HOME/
+	cp $HABITAT_PATH/dotfiles/.bashrc $HOME/
+	cp $HABITAT_PATH/dotfiles/.functions $HOME/
+	cp $HABITAT_PATH/dotfiles/.shortcuts $HOME/
+	cp $HABITAT_PATH/dotfiles/.inputrc $HOME/
+	cp $HABITAT_PATH/dotfiles/.vimrc $HOME/
+	cp $HABITAT_PATH/habitat/habitat.sh $HOME/local/bin/habitat
 	if [ ! -d $HOME/.vim/colors ]
 	then
 		mkdir -p $HOME/.vim/colors/
 	fi
-	cp dotfiles/nocturn.vim $HOME/.vim/colors/nocturn.vim
+	cp $HABITAT_PATH/dotfiles/nocturn.vim $HOME/.vim/colors/nocturn.vim
+	cp $HABITAT_PATH/utility/rm.sh $LOCAL/bin
 	source $HOME/.bashrc
-	cp utility/rm.sh $HOME/local/bin
-	cd -
-	echo environment updated
+	echo "### environment updated ###"
 }
 
 export bm
