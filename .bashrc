@@ -6,6 +6,7 @@ fi
 
 # alias
 alias l="ls -la --color"
+alias ls="ls --color"
 alias ..="cd .."
 alias rm="$LOCAL/bin/rm.sh"
 source $HOME/.shortcuts
@@ -26,6 +27,7 @@ SSH_ASKPASS=""
 export SSH_ASKPASS
 export LOCAL
 export VIMRUNTIME=$LOCAL/share/vim/vim81
+export HABITAT_PATH=$HOME/Projects/bashrc
 
 # prompt
 export PS1='\[\e[0;33m\][\[\e[m\e[1;31m\]{\h} \[\e[m\e[1;36m\]$(pwd)\[\e[m\e[0;33m\]]\$ \[\e[m\]'

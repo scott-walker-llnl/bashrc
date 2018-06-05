@@ -38,11 +38,11 @@ then
 fi
 
 mkdir -p $HOME/.vim/colors/
-cp dotfiles/.bashrc $HOME/
-cp dotfiles/.functions $HOME/
-cp dotfiles/.shortcuts $HOME/
-cp dotfiles/.inputrc $HOME/
-cp dotfiles/.vimrc $HOME/
+cp .bashrc $HOME/
+cp .functions $HOME/
+cp .shortcuts $HOME/
+cp .inputrc $HOME/
+cp .vimrc $HOME/
 cp dotfiles/nocturn.vim $HOME/.vim/colors/
 cp utility/rm.sh $HOME/local/bin
 cp habitat/habitat.sh $HOME/local/bin/habitat
